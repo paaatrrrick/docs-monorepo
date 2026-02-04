@@ -1,0 +1,96 @@
+---
+title: Repository file structure
+description: Complete overview of all files and directories in the repository
+---
+
+# Repository file structure
+
+This document provides a comprehensive overview of the repository structure, including all files and directories at each level.
+
+## Root level files
+
+The repository root contains only the `.git` directory and one subdirectory:
+
+- `.git/` - Git version control directory
+- `sub-dir/` - Main project subdirectory
+
+No files exist directly at the root level (excluding the `.git` directory contents).
+
+## Subdirectories
+
+### sub-dir/
+
+The `sub-dir/` directory contains the main project structure:
+
+- `docs/` - Documentation directory (Mintlify project)
+
+### sub-dir/docs/ (Main documentation)
+
+The docs directory contains the complete Mintlify documentation structure:
+
+#### Configuration files
+- `docs.json` - Mintlify configuration file
+- `LICENSE` - License file
+- `README.md` - Repository readme
+
+#### Main pages
+- `index.mdx` - Homepage/landing page
+- `quickstart.mdx` - Getting started guide
+- `development.mdx` - Development documentation
+
+#### Assets
+- `favicon.svg` - Site favicon
+- `logo/` - Brand assets directory
+  - `dark.svg` - Dark mode logo
+  - `light.svg` - Light mode logo
+- `images/` - Image assets
+  - `hero-dark.png` - Dark theme hero image
+  - `hero-light.png` - Light theme hero image
+  - `checks-passed.png` - Status check image
+
+#### Documentation sections
+
+**AI Tools** (`ai-tools/`)
+- `claude-code.mdx` - Claude Code documentation
+- `cursor.mdx` - Cursor editor documentation  
+- `windsurf.mdx` - Windsurf documentation
+
+**API Reference** (`api-reference/`)
+- `introduction.mdx` - API introduction
+- `openapi.json` - OpenAPI specification
+- `endpoint/` - API endpoint documentation
+  - `create.mdx` - Create endpoint docs
+  - `delete.mdx` - Delete endpoint docs
+  - `get.mdx` - Get endpoint docs
+  - `webhook.mdx` - Webhook endpoint docs
+
+**Essentials** (`essentials/`)
+- `code.mdx` - Code documentation guidelines
+- `images.mdx` - Image handling guide
+- `markdown.mdx` - Markdown reference
+- `navigation.mdx` - Navigation setup
+- `reusable-snippets.mdx` - Content reuse guide
+- `settings.mdx` - Configuration settings
+
+**Snippets** (`snippets/`)
+- `snippet-intro.mdx` - Introduction snippet
+
+## File count summary
+
+- **Total directories**: 26
+- **Total files**: 65 (including .git directory contents)
+- **Documentation files**: 20 MDX files
+- **Configuration files**: 2 (docs.json, openapi.json)
+- **Image assets**: 5 files
+- **Logo assets**: 2 files
+
+## Repository insights
+
+This is a Mintlify documentation repository with a well-organized structure covering:
+
+1. **AI development tools** - Documentation for Claude Code, Cursor, and Windsurf
+2. **API documentation** - Complete API reference with OpenAPI spec
+3. **Essential guides** - Core documentation practices and setup
+4. **Visual assets** - Logos and images for both light/dark themes
+
+The repository follows Mintlify's standard structure with proper organization of content into logical sections and comprehensive asset management.
