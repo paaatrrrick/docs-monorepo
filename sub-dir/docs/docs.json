@@ -50,6 +50,12 @@
             "pages": [
               "cats"
             ]
+          },
+          {
+            "group": "Repository info",
+            "pages": [
+              "file-structure"
+            ]
           }
         ]
       },

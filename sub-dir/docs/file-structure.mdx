@@ -1,0 +1,95 @@
+---
+title: "Repository file structure"
+description: "Complete overview of the documentation repository file organization"
+---
+
+## Repository structure overview
+
+This document provides a comprehensive view of the file structure across the documentation repository.
+
+## Root level files
+
+The workspace root contains:
+
+- `.git/` - Git repository metadata
+- `sub-dir/` - Main documentation directory
+
+## sub-dir level
+
+The sub-dir contains:
+
+- `docs/` - All documentation files and assets
+
+## docs directory structure
+
+The docs directory contains all documentation files, organized as follows:
+
+### Root files
+- `cats.mdx` - Comprehensive guide about cats (newly added)
+- `development.mdx` - Local development guide
+- `docs.json` - Mintlify configuration file
+- `favicon.svg` - Site favicon
+- `index.mdx` - Homepage content
+- `LICENSE` - Repository license
+- `quickstart.mdx` - Quick start guide
+- `README.md` - Repository readme
+
+### Directories and subdirectories
+
+#### ai-tools/
+AI development tool documentation:
+- `claude-code.mdx` - Claude Code documentation
+- `cursor.mdx` - Cursor editor documentation  
+- `windsurf.mdx` - Windsurf documentation
+
+#### api-reference/
+API documentation:
+- `introduction.mdx` - API introduction
+- `openapi.json` - OpenAPI specification
+- `endpoint/` - Individual endpoint documentation
+  - `create.mdx` - Create endpoint
+  - `delete.mdx` - Delete endpoint
+  - `get.mdx` - Get endpoint
+  - `webhook.mdx` - Webhook endpoint
+
+#### essentials/
+Core documentation features:
+- `code.mdx` - Code samples documentation
+- `images.mdx` - Image handling guide
+- `markdown.mdx` - Markdown usage guide
+- `navigation.mdx` - Navigation setup
+- `reusable-snippets.mdx` - Content snippets
+- `settings.mdx` - Site configuration
+
+#### images/
+Static image assets:
+- `checks-passed.png` - Status check image
+- `hero-dark.png` - Dark theme hero image
+- `hero-light.png` - Light theme hero image
+
+#### logo/
+Brand assets:
+- `dark.svg` - Dark theme logo
+- `light.svg` - Light theme logo
+
+#### snippets/
+Reusable content snippets:
+- `snippet-intro.mdx` - Introduction snippet
+
+## File organization principles
+
+The documentation follows these organizational principles:
+
+1. **Logical grouping** - Related content is grouped into directories
+2. **Clear naming** - Files use descriptive, kebab-case names
+3. **Asset separation** - Images and logos are in dedicated directories
+4. **Configuration centralization** - Main config in docs.json at docs root
+
+## Recent additions
+
+- Added `cats.mdx` with comprehensive cat care documentation
+- Updated `docs.json` to include new Animals navigation section
+
+<Info>
+This file structure supports scalable documentation with clear separation of concerns and intuitive navigation.
+</Info>
