@@ -22,6 +22,12 @@
             ]
           },
           {
+            "group": "Food guides",
+            "pages": [
+              "oatmeal"
+            ]
+          },
+          {
             "group": "Customization",
             "pages": [
               "essentials/settings",
