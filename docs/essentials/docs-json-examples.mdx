@@ -1,0 +1,385 @@
+---
+title: docs.json examples
+description: Practical examples of common docs.json configurations
+icon: code
+---
+
+The `docs.json` file is the central configuration file for your Mintlify documentation. Below are practical examples of common configurations.
+
+## Basic configuration
+
+Minimal setup with name, colors, and simple navigation:
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "My Project",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["introduction", "quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Multiple tabs with groups
+
+Organize content into tabs with multiple groups:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["index", "quickstart", "installation"]
+          },
+          {
+            "group": "Advanced",
+            "pages": ["authentication", "webhooks", "rate-limits"]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-reference/users/get",
+              "api-reference/users/create",
+              "api-reference/users/delete"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Logo configuration
+
+### Single logo
+
+```json
+{
+  "logo": "/logo.svg"
+}
+```
+
+### Light and dark mode logos
+
+```json
+{
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://example.com"
+  }
+}
+```
+
+## Navigation bar customization
+
+Add links and a primary CTA button to your navbar:
+
+```json
+{
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@example.com"
+      },
+      {
+        "label": "Community",
+        "href": "https://discord.gg/example"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.example.com"
+    }
+  }
+}
+```
+
+## Global anchors
+
+Add persistent links to external resources:
+
+```json
+{
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://docs.example.com",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "API Reference",
+          "href": "https://api.example.com",
+          "icon": "code"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/example",
+          "icon": "discord"
+        }
+      ]
+    }
+  }
+}
+```
+
+## API playground configuration
+
+Configure API base URL and authentication:
+
+```json
+{
+  "api": {
+    "baseUrl": "https://api.example.com/v1",
+    "auth": {
+      "method": "bearer",
+      "name": "Authorization"
+    },
+    "playground": {
+      "mode": "show"
+    }
+  }
+}
+```
+
+### Multiple base URLs
+
+Allow users to toggle between environments:
+
+```json
+{
+  "api": {
+    "baseUrl": [
+      "https://api.example.com/v1",
+      "https://sandbox.example.com/v1"
+    ]
+  }
+}
+```
+
+## Footer customization
+
+Add social media links and custom footer content:
+
+```json
+{
+  "footer": {
+    "socials": {
+      "x": "https://x.com/example",
+      "github": "https://github.com/example",
+      "linkedin": "https://linkedin.com/company/example",
+      "discord": "https://discord.gg/example"
+    }
+  }
+}
+```
+
+## Theme customization
+
+### Dark mode settings
+
+```json
+{
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  }
+}
+```
+
+### Force dark mode only
+
+```json
+{
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  }
+}
+```
+
+### Custom colors with background
+
+```json
+{
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0F1117"
+    }
+  }
+}
+```
+
+## OpenAPI integration
+
+Link to your OpenAPI specification:
+
+```json
+{
+  "openapi": "https://api.example.com/openapi.json"
+}
+```
+
+### Multiple OpenAPI files
+
+```json
+{
+  "openapi": [
+    "https://api.example.com/v1/openapi.json",
+    "https://api.example.com/v2/openapi.json"
+  ]
+}
+```
+
+## Feedback and contribution
+
+Enable user feedback buttons:
+
+```json
+{
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  }
+}
+```
+
+## Contextual actions
+
+Enable actions like copy, view source, and AI integrations:
+
+```json
+{
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "cursor",
+      "vscode"
+    ]
+  }
+}
+```
+
+## Complete example
+
+A full-featured configuration:
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "My Documentation",
+  "theme": "almond",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["index", "quickstart"]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": ["api-reference/introduction"]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/example",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@example.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.example.com"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.example.com/v1",
+    "auth": {
+      "method": "bearer",
+      "name": "Authorization"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/example",
+      "github": "https://github.com/example"
+    }
+  },
+  "contextual": {
+    "options": ["copy", "view", "chatgpt", "claude"]
+  }
+}
+```
+
+## Related resources
+
+- [Global settings](/essentials/settings)
+- [Navigation configuration](/essentials/navigation)
