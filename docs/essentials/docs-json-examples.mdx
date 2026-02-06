@@ -1,0 +1,488 @@
+---
+title: docs.json examples
+description: Practical examples for configuring your Mintlify documentation
+icon: code
+---
+
+The `docs.json` file controls your documentation's configuration. Here are common examples to get you started.
+
+## Basic configuration
+
+Minimal setup with navigation and branding:
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "My Docs",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["introduction", "quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Navigation examples
+
+### Multiple tabs
+
+Create separate sections like docs and API reference:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["introduction", "quickstart"]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": ["api/users", "api/products"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Nested groups
+
+Organize pages with subgroups:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "introduction",
+              {
+                "group": "Installation",
+                "pages": ["install/npm", "install/yarn", "install/docker"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Global anchors
+
+Add external links to your navigation:
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["introduction"]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/yourorg/yourrepo",
+          "icon": "github"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/yourserver",
+          "icon": "discord"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Navbar customization
+
+### Links and CTA button
+
+Add support links and a primary action button:
+
+```json
+{
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@example.com"
+      },
+      {
+        "label": "Blog",
+        "href": "https://example.com/blog"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://app.example.com/signup"
+    }
+  }
+}
+```
+
+### GitHub star button
+
+Display your repository stats:
+
+```json
+{
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/yourorg/yourrepo"
+    }
+  }
+}
+```
+
+## API configuration
+
+### Basic API setup
+
+Configure API playground with authentication:
+
+```json
+{
+  "api": {
+    "baseUrl": "https://api.example.com/v1",
+    "auth": {
+      "method": "bearer",
+      "name": "API Key"
+    },
+    "playground": {
+      "mode": "show"
+    }
+  },
+  "openapi": "/openapi.json"
+}
+```
+
+### Multiple base URLs
+
+Let users toggle between environments:
+
+```json
+{
+  "api": {
+    "baseUrl": [
+      "https://api.example.com/v1",
+      "https://api-staging.example.com/v1",
+      "http://localhost:3000/v1"
+    ]
+  }
+}
+```
+
+### API key authentication
+
+```json
+{
+  "api": {
+    "baseUrl": "https://api.example.com",
+    "auth": {
+      "method": "key",
+      "name": "X-API-Key",
+      "inputPrefix": "sk_"
+    }
+  }
+}
+```
+
+### Basic authentication
+
+```json
+{
+  "api": {
+    "baseUrl": "https://api.example.com",
+    "auth": {
+      "method": "basic",
+      "name": "username:password"
+    }
+  }
+}
+```
+
+## Theme customization
+
+### Color schemes
+
+Define your brand colors:
+
+```json
+{
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1E40AF",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0F172A"
+    }
+  }
+}
+```
+
+### Theme selection
+
+Choose from preset themes:
+
+```json
+{
+  "theme": "mint"
+}
+```
+
+Available themes: `mint`, `almond`, `venus`, `quartz`
+
+### Force dark or light mode
+
+Disable the mode toggle:
+
+```json
+{
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": true
+  }
+}
+```
+
+## Footer configuration
+
+### Social links
+
+Add social media icons:
+
+```json
+{
+  "footer": {
+    "socials": {
+      "github": "https://github.com/yourorg",
+      "x": "https://x.com/yourhandle",
+      "linkedin": "https://linkedin.com/company/yourcompany",
+      "discord": "https://discord.gg/yourserver"
+    }
+  }
+}
+```
+
+## Advanced features
+
+### Contextual actions
+
+Enable AI chat and code editor integrations:
+
+```json
+{
+  "contextual": {
+    "options": [
+      "copy",
+      "chatgpt",
+      "claude",
+      "cursor",
+      "vscode",
+      "mcp"
+    ]
+  }
+}
+```
+
+### Feedback buttons
+
+Let users suggest edits or report issues:
+
+```json
+{
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  }
+}
+```
+
+### Background image
+
+Add a custom background:
+
+```json
+{
+  "backgroundImage": "/images/background.png"
+}
+```
+
+### SEO metadata
+
+Configure default metadata:
+
+```json
+{
+  "metadata": {
+    "og:title": "My Documentation",
+    "og:description": "Comprehensive guides and API reference",
+    "og:image": "https://example.com/og-image.png",
+    "twitter:site": "@yourhandle"
+  }
+}
+```
+
+## Multiple OpenAPI specs
+
+Load multiple API specifications:
+
+```json
+{
+  "openapi": [
+    "/openapi/v1.json",
+    "/openapi/v2.json",
+    "https://api.example.com/openapi.json"
+  ]
+}
+```
+
+## Complete example
+
+Full-featured configuration:
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Acme Documentation",
+  "theme": "quartz",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://acme.com"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#22C55E",
+    "dark": "#15803D"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": ["introduction", "quickstart", "installation"]
+          },
+          {
+            "group": "Guides",
+            "pages": ["guides/authentication", "guides/webhooks"]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": ["api/users", "api/products", "api/orders"]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/acme/docs",
+          "icon": "github"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/acme",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@acme.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.acme.com"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.acme.com/v1",
+    "auth": {
+      "method": "bearer",
+      "name": "API Key"
+    }
+  },
+  "openapi": "/openapi.json",
+  "footer": {
+    "socials": {
+      "github": "https://github.com/acme",
+      "x": "https://x.com/acme",
+      "linkedin": "https://linkedin.com/company/acme"
+    }
+  },
+  "contextual": {
+    "options": ["copy", "chatgpt", "claude", "cursor"]
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true
+  }
+}
+```
+
+## Learn more
+
+- [Global settings](/essentials/settings) - Complete property reference
+- [Navigation](/essentials/navigation) - Navigation structure details
